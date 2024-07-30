@@ -3,13 +3,13 @@ import { Router } from "express"
 
 const coffeeDrinkRouter = Router()
 
-coffeeDrinkRouter.route("/coffee")
+Router.route("/coffee")
     .post(CoffeeDrinkController.create)
     .get(CoffeeDrinkController.getAll)
 
-coffeeDrinkRouter.route("/coffee/:id")
+Router.route("/coffee/:id")
     .get(CoffeeDrinkController.getOne)
-    .patch(CoffeeDrinkController.update)
+    .put(CoffeeDrinkController.update)
     .delete(CoffeeDrinkController.delete)
 
 export default coffeeDrinkRouter

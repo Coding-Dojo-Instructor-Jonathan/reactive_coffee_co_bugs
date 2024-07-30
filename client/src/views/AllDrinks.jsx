@@ -7,7 +7,7 @@ const AllDrinks = () => {
             <Header />
             <main>
                 <h1>Our Reactive Coffee Menu</h1>
-                <CoffeeDrinks />
+                <CoffeeDrink />
             </main>
         </>
     )

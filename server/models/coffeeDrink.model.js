@@ -5,7 +5,6 @@ const CoffeeDrinkSchema = new Schema(
     {
         "name": {
             "type": String,
-            "required": [true, "Drink name is required!"],
             "minlength": [5, "Drink name must be at least 5 characters long!"],
         },
         "description": {
@@ -19,15 +18,11 @@ const CoffeeDrinkSchema = new Schema(
         },
         "coffeeBean": {
             "type": String,
-            "required": [true, "You must specify the coffee bean used for this drink!"]
         },
         "inStock": {
             "type": Boolean,
             "default": false
         }
-    },
-    {
-        "timestamps": true
     }
 )
 

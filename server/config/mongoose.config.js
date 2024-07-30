@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config()
 
 // get the MongoDB instance URL from .env
-const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = process.env.MONGODB_URL 
 
 
 // async function that will establish a connection to our
@@ -13,7 +13,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 async function dbConnect() {
     try {
         await connect(MONGODB_URI, {
-            dbName: "reactiveCoffeeCoDB" // <-- change to correct DB name
+            dbName: "" // <-- change to correct DB name
         })
 
         console.log("You have successfully pinged and connected to your MongoDB deployment!")

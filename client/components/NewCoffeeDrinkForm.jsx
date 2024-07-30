@@ -33,7 +33,7 @@ const NewCoffeeDrinkForm = (props) => {
                     "price": 0.00
                 })
             })
-            .catch((err) => {setErrors(err.response.data.errors)})
+            .catch((err) => {setErrors(err)})
     }
 
     return (
@@ -43,7 +43,7 @@ const NewCoffeeDrinkForm = (props) => {
                 <div className={styles.inputWrapper}>
                     {errors.name && <p className={styles.error}>{errors.name.message}</p>}
                     <label htmlFor="name">Drink Name:</label>
-                    <input type="text" name="name" value={drinkData.name} onChange={(e) => handleInputUpdate(e)} />
+                    <input type="text" name="name" onChange={(e) => handleInputUpdate(e)} />
                 </div>
                 <div className={styles.inputWrapper}>
                     {errors.coffeeBean && <p className={styles.error}>{errors.coffeeBean.message}</p>}
@@ -56,7 +56,6 @@ const NewCoffeeDrinkForm = (props) => {
                     <textarea name="description" value={drinkData.description} onChange={(e) => handleInputUpdate(e)}></textarea>
                 </div>
                 <div className={styles.inputWrapper}>
-                    {errors.price && <p className={styles.error}>{errors.price.message}</p>}
                     <label htmlFor="price">Price:</label>
                     <input type="number" step="0.01" name="price" value={drinkData.price} onChange={(e) => handleInputUpdate(e)} />
                 </div>

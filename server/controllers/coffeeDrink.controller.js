@@ -1,13 +1,8 @@
-// import CoffeeDrink model
-import CoffeeDrink from "../models/coffeeDrink.model.js";
-
-// use Mongoose functionality to define controller functionality
 const CoffeeDrinkController = {
     "create": async (req, res) => {
         try {
             const newDrink = await CoffeeDrink.create(req.body)
 
-            // respond with the newDrink object
             res.json(newDrink)
         } catch(error) {
             console.log(error)
@@ -34,7 +29,7 @@ const CoffeeDrinkController = {
             res.status(400).json(error)
         }
     },
-    "update": async (req, res) => {
+    "updateOne": async (req, res) => {
         try {
             const options = {
                 "new": true,
@@ -51,7 +46,7 @@ const CoffeeDrinkController = {
     },
     "delete": async (req, res) => {
         try {
-            const deletedDrink = await CoffeeDrink.findByIdAndDelete(req.params.id)
+            const deletedDrink = await CoffeeDrink.findByIdAndDelete()
 
             res.json(deletedDrink)
         } catch(error) {

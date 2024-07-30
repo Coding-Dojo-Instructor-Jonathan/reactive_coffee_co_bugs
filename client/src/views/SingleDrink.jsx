@@ -17,7 +17,7 @@ const SingleDrink = () => {
     }, [])
 
     const deleteDrink = () => {
-        CoffeeDrinkService.deleteDrink(id)
+        CoffeeDrinkService.deleteDrink()
             .then(() => { navigate("/") })
     }
 
@@ -31,7 +31,7 @@ const SingleDrink = () => {
                 <p><b>Price:</b> ${drink.price}</p>
                 <div className={moduleStyles.buttonWrapper}></div>
                 <Link to={`/drink/update/${drink._id}`} className={buttonStyles.yellowCTA}>Update</Link>
-                <button onClick={deleteDrink} className={buttonStyles.redCTA}>Delete {drink.name}</button>
+                <button onClick={deleteDrink} className={buttonStyles.deletebutton}>Delete {drink.name}</button>
             </main>
         </>
     )

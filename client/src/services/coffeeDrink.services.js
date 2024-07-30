@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const http = axios.create({
-    "baseURL": "http://localhost:8000/api/coffee"
+    "baseURL": "http://localhost:8000/coffee"
 })
 
 const CoffeeDrinkService = {
@@ -26,7 +26,7 @@ const CoffeeDrinkService = {
     },
     "updateDrink": async (id, data) => {
         try {
-            const res = await http.patch(`/${id}`, data)
+            const res = await http.patch(`/${id}`)
             return res.data
         } catch(err) { throw err }
     },
